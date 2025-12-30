@@ -40,13 +40,13 @@ $result = mysqli_query($koneksi, $query);
 $tags_query = "SELECT id, nama FROM tag ORDER BY nama ASC";
 $tags_result = mysqli_query($koneksi, $tags_query);
 
-// --- QUERY BARU: Ambil Daftar Bulan Unik ---
+
 $archive_query = "SELECT DISTINCT YEAR(tanggal) AS tahun, MONTH(tanggal) AS bulan 
                   FROM entri 
                   ORDER BY tahun DESC, bulan DESC";
 $archive_result = mysqli_query($koneksi, $archive_query);
 
-// Buat array bulan untuk konversi angka ke nama
+
 $nama_bulan = [
     1 => 'Januari', 2 => 'Februari', 3 => 'Maret', 4 => 'April', 5 => 'Mei', 6 => 'Juni', 
     7 => 'Juli', 8 => 'Agustus', 9 => 'September', 10 => 'Oktober', 11 => 'November', 12 => 'Desember'
@@ -61,7 +61,7 @@ $nama_bulan = [
     <title>🏡 Diary Digital Publik - Kumpulan Entri</title>
     <link rel="stylesheet" href="style.css"> 
     <style>
-        /* Tambahan CSS untuk Navigasi Arsip */
+   
         .sidebar { float: right; width: 250px; padding: 15px; background: #FFFAF0; border-left: 1px solid #F8BBD0; border-radius: 0 12px 12px 0; margin-left: 20px; }
         .main-content { margin-right: 270px; }
         .sidebar h3 { color: #FF69B4; margin-top: 0; padding-bottom: 5px; border-bottom: 1px solid #F8BBD0; }
@@ -144,4 +144,5 @@ $nama_bulan = [
             <?php endif; ?>
         </div> </div>
 </body>
+
 </html>
