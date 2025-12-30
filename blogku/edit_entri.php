@@ -59,7 +59,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id_entri'])) {
                     $tag_name = strtolower($tag_name);
                     if (empty($tag_name)) continue;
                     
-                    // Cek apakah tag sudah ada
+                   
                     $query_check_tag = "SELECT id FROM tag WHERE nama = '$tag_name'";
                     $result_check = mysqli_query($koneksi, $query_check_tag);
                     
@@ -67,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id_entri'])) {
                         $row = mysqli_fetch_assoc($result_check);
                         $tag_id = $row['id'];
                     } else {
-                        // Tambahkan tag baru jika belum ada
+                        
                         $query_insert_tag = "INSERT INTO tag (nama) VALUES ('$tag_name')";
                         mysqli_query($koneksi, $query_insert_tag);
                         $tag_id = mysqli_insert_id($koneksi);
@@ -150,4 +150,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['id_entri'])) {
         <?php endif; ?>
     </div>
 </body>
+
 </html>
