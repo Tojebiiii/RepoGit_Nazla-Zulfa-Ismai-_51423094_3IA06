@@ -1,0 +1,171 @@
+body {
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+    margin: 20px;
+
+    background-color: #FFFAF0; /* Floral White / Pink Muda */
+
+}
+
+.container {
+
+    max-width: 900px;
+
+    margin: auto;
+
+    background: #FFFFFF;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+}
+
+h1 {
+
+    color: #FF69B4;
+
+    border-bottom: 2px solid #F8BBD0;
+
+    padding-bottom: 10px;
+
+}
+
+hr { border-color: #F8BBD0; }
+
+.link-kembali { color: #FF69B4; text-decoration: none; font-weight: bold; }
+
+.link-kembali:hover { text-decoration: underline; }
+
+
+
+
+
+
+
+input[type="text"], textarea, input[type="color"] {
+
+    width: 97%;
+
+    padding: 12px;
+
+    margin-top: 5px;
+
+    border: 1px solid #F8BBD0;
+
+    border-radius: 6px;
+
+    box-sizing: border-box;
+
+}
+
+textarea { resize: vertical; height: 180px; }
+
+
+
+button {
+
+    background-color: #F8BBD0;
+
+    color: #333;
+
+    padding: 12px 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: background-color 0.3s;
+
+}
+
+button:hover { background-color: #E91E63; color: white; }
+
+
+
+
+
+/*Gaya Daftar Entri (index.php) */
+
+.search-form button { margin-left: 10px; }
+
+
+
+/* Entri per item */
+
+.entri {
+
+    border: 1px solid #F8BBD0;
+
+    padding: 15px;
+
+    margin-bottom: 15px;
+
+    border-radius: 8px;
+
+    background: #fff;
+
+}
+
+.entri h2 a { color: #FF69B4; text-decoration: none; }
+
+.entri h2 a:hover { text-decoration: underline; }
+
+
+
+
+
+/*  Gaya Tag Filter dan Detail  */
+
+.tag-list a, .tags-section span {
+
+    display: inline-block;
+
+    padding: 5px 12px;
+
+    margin: 2px;
+
+    background-color: #F8BBD0;
+
+    border-radius: 15px;
+
+    text-decoration: none;
+
+    color: #333;
+
+    font-size: 0.9em;
+
+    transition: background-color 0.3s;
+
+}
+
+.tag-list a.active, .tag-list a:hover, .tags-section span:hover {
+
+    background-color: #FF69B4;
+
+    color: white;
+
+}
+
+.tags-section a { color: inherit; }
+
+
+
+
+
+/*  Gaya Detail Entri (lihat_entri.php)  */
+
+.tanggal { color: #777; font-style: italic; margin-bottom: 20px; display: block; border-bottom: 1px dashed #ccc; padding-bottom: 10px; }
+
+.isi-entri { line-height: 1.8; white-space: pre-wrap; margin-bottom: 20px; color: #333; }
+
+.illustration { margin-bottom: 20px; text-align: center; }
+
+.illustration img { max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
