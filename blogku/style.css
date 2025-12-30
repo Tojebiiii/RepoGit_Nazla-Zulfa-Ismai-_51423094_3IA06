@@ -4,7 +4,7 @@ body {
 
     margin: 20px;
 
-    background-color: #FFFAF0; /
+    background-color: #FFFAF0; 
 
 }
 
@@ -170,3 +170,4 @@ button:hover { background-color: #E91E63; color: white; }
 
 
 .illustration img { max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
+
