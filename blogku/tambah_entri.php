@@ -6,8 +6,7 @@ $message = '';
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $judul = mysqli_real_escape_string($koneksi, $_POST['judul']);
     
-    // PERBAIKAN #1: Tambahkan mysqli_real_escape_string() pada isi (HTML) 
-    // untuk mencegah error SQL jika ada tanda kutip tunggal dalam konten.
+.
     $isi = mysqli_real_escape_string($koneksi, $_POST['isi']); 
 
     $tags_input = isset($_POST['tags']) ? mysqli_real_escape_string($koneksi, $_POST['tags']) : '';
@@ -16,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $img_url = mysqli_real_escape_string($koneksi, $_POST['illustration_url']); 
 
     if (!empty($judul) && !empty($isi)) {
-        // Query sekarang lebih aman
+      
         $query_entri = "INSERT INTO entri (judul, isi, background_color, illustration_url) 
                          VALUES ('$judul', '$isi', '$bg_color', '$img_url')";
         
@@ -44,7 +43,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             header("Location: lihat_entri.php?id=$last_id");
             exit();
         } else {
-            // Tampilkan pesan error SQL jika terjadi kegagalan
+            
             $message = "Error menyimpan entri: " . mysqli_error($koneksi);
         }
     } else {
@@ -68,7 +67,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <script src="https://cdn.tiny.cloud/1/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
         tinymce.init({
-            selector: 'textarea#isi', // Pastikan menggunakan ID
+            selector: 'textarea#isi',
             plugins: 'advlist autolink lists link image charmap print preview anchor ' +
                      'searchreplace visualblocks code fullscreen insertdatetime media table paste code help wordcount',
             toolbar: 'undo redo | formatselect | ' +
@@ -76,11 +75,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                      'alignright alignjustify | bullist numlist outdent indent | ' +
                      'removeformat | help | image media', 
             
-            // PERBAIKAN #2: Konfigurasi Gambar HANYA URL
+         
             image_title: true,
-            automatic_uploads: false, // Memastikan unggah otomatis dimatikan
-            // Hapus semua file_picker_types dan file_picker_callback.
-            // TinyMCE akan secara default menggunakan dialog URL saat tombol 'image' diklik.
+            automatic_uploads: false, 
+           
             
         });
     </script>
@@ -116,4 +114,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </form>
     </div>
 </body>
+
 </html>
